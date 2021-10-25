@@ -110,7 +110,21 @@ def breadthFirstSearch(problem):
     """Search the shallowest nodes in the search tree first."""
     "*** YOUR CODE HERE ***"
     closed = []
-    fringe = util.Queue
+    fringe = util.Queue()
+    fringe.push(problem.getStartState())
+    sol = util.Queue()
+    sol.push([])
+    while not (fringe.isEmpty()):
+        state = fringe.pop()
+        direction = sol.pop()
+        if problem.isGoalState(state):
+            # print(len(direction + [s[1]]))
+            return direction + [s[1]]
+        if not (closed.__contains__(state)):
+            closed.append(state)
+            for s in problem.getSuccessors(state):
+                fringe.push(s[0])
+                sol.push(direction + [s[1]])
 
     util.raiseNotDefined()
 
