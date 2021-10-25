@@ -95,7 +95,7 @@ def depthFirstSearch(problem):
         direction = sol.pop()
         if problem.isGoalState(state):
             # print(len(direction + [s[1]]))
-            return direction + [s[1]]
+            return direction + [s[1]]       # ask
 
         if not (closed.__contains__(state)):
             closed.append(state)
@@ -132,6 +132,23 @@ def breadthFirstSearch(problem):
 def uniformCostSearch(problem):
     """Search the node of least total cost first."""
     "*** YOUR CODE HERE ***"
+    closed = []
+    fringe = util.PriorityQueue()
+    fringe.push(problem.getStartState(), 0)
+    sol = util.PriorityQueue()
+    sol.push([], 0)
+    while not (fringe.isEmpty()):
+        state = fringe.pop()
+        direction = sol.pop()
+        if problem.isGoalState(state):
+            # print(len(direction))
+            return direction
+        if not (closed.__contains__(state)):
+            closed.append(state)
+            for s in problem.getSuccessors(state):
+                fringe.push(s[0], s[2])
+                sol.push(direction + [s[1]], s[2])
+
     util.raiseNotDefined()
 
 
