@@ -118,8 +118,8 @@ def breadthFirstSearch(problem):
         state = fringe.pop()
         direction = sol.pop()
         if problem.isGoalState(state):
-            # print(len(direction + [s[1]]))
-            return direction + [s[1]]
+            # print(len(direction))
+            return direction
         if not (closed.__contains__(state)):
             closed.append(state)
             for s in problem.getSuccessors(state):
