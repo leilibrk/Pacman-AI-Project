@@ -85,7 +85,23 @@ def depthFirstSearch(problem):
     understand the search problem that is being passed in:
     """
     "*** YOUR CODE HERE ***"
+    closed = []
+    fringe = util.Stack()
+    sol = util.Stack()
+    fringe.push(problem.getStartState())
+    sol.push([])
+    while not (fringe.isEmpty()):
+        state = fringe.pop()
+        direction = sol.pop()
+        if problem.isGoalState(state):
+            # print(len(direction + [s[1]]))
+            return direction + [s[1]]
 
+        if not (closed.__contains__(state)):
+            closed.append(state)
+            for s in problem.getSuccessors(state):
+                fringe.push(s[0])
+                sol.push(direction + [s[1]])
 
     util.raiseNotDefined()
 
