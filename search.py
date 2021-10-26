@@ -94,8 +94,7 @@ def depthFirstSearch(problem):
         state = fringe.pop()
         direction = sol.pop()
         if problem.isGoalState(state):
-            # print(len(direction + [s[1]]))
-            return direction + [s[1]]       # ask
+            return direction
 
         if not (closed.__contains__(state)):
             closed.append(state)
@@ -103,7 +102,7 @@ def depthFirstSearch(problem):
                 fringe.push(s[0])
                 sol.push(direction + [s[1]])
 
-    util.raiseNotDefined()
+    # util.raiseNotDefined()
 
 
 def breadthFirstSearch(problem):
@@ -118,7 +117,6 @@ def breadthFirstSearch(problem):
         state = fringe.pop()
         direction = sol.pop()
         if problem.isGoalState(state):
-            # print(len(direction))
             return direction
         if not (closed.__contains__(state)):
             closed.append(state)
@@ -126,7 +124,7 @@ def breadthFirstSearch(problem):
                 fringe.push(s[0])
                 sol.push(direction + [s[1]])
 
-    util.raiseNotDefined()
+    # util.raiseNotDefined()
 
 
 def uniformCostSearch(problem):
@@ -141,7 +139,6 @@ def uniformCostSearch(problem):
         state = fringe.pop()
         direction = sol.pop()
         if problem.isGoalState(state):
-            # print(len(direction))
             return direction
         if not (closed.__contains__(state)):
             closed.append(state)
@@ -150,7 +147,7 @@ def uniformCostSearch(problem):
                 fringe.push(s[0], problem.getCostOfActions(action))
                 sol.push(action, problem.getCostOfActions(action))
 
-    util.raiseNotDefined()
+    # util.raiseNotDefined()
 
 
 def nullHeuristic(state, problem=None):
@@ -180,7 +177,7 @@ def aStarSearch(problem, heuristic=nullHeuristic):
                 action = direction + [s[1]]
                 fringe.push(s[0], problem.getCostOfActions(action)+heuristic(s[0], problem))
                 sol.push(action, problem.getCostOfActions(action)+heuristic(s[0], problem))
-    util.raiseNotDefined()
+    # util.raiseNotDefined()
 
 
 # Abbreviations
