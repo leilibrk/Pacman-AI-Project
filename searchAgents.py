@@ -499,7 +499,29 @@ def foodHeuristic(state, problem):
     """
     position, foodGrid = state
     "*** YOUR CODE HERE ***"
-    return 0
+    foods = foodGrid.asList()
+    minCost = 0
+    maxCost = 0
+    minIndex = -1
+    maxIndex = -1
+
+    for i in range(0, len(foods)):
+        xy2 = foods[i]
+        manDis = util.manhattanDistance(position, xy2)
+        if manDis > maxCost:
+            maxCost = manDis
+            maxIndex = i
+    for i in range(0, len(foods)):
+        xy2 = foods[i]
+        manDis = util.manhattanDistance(position, xy2)
+        if minCost == 0 or minCost > manDis:
+            minCost = manDis
+            minIndex = i
+    if minIndex == -1 or maxIndex == -1:
+        return 0
+    else:
+        return util.manhattanDistance(position, foods[minIndex]) + util.manhattanDistance(foods[minIndex], foods[maxIndex])
+
 
 
 class ClosestDotSearchAgent(SearchAgent):
