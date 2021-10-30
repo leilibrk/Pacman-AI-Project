@@ -520,8 +520,8 @@ def foodHeuristic(state, problem):
     if minIndex == -1 or maxIndex == -1:
         return 0
     else:
-        return util.manhattanDistance(position, foods[minIndex]) + util.manhattanDistance(foods[minIndex], foods[maxIndex])
-
+        return util.manhattanDistance(position, foods[minIndex]) + util.manhattanDistance(foods[minIndex],
+                                                                                          foods[maxIndex])
 
 
 class ClosestDotSearchAgent(SearchAgent):
@@ -554,7 +554,7 @@ class ClosestDotSearchAgent(SearchAgent):
         problem = AnyFoodSearchProblem(gameState)
 
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        # util.raiseNotDefined()
 
 
 class AnyFoodSearchProblem(PositionSearchProblem):
@@ -589,9 +589,11 @@ class AnyFoodSearchProblem(PositionSearchProblem):
         complete the problem definition.
         """
         x, y = state
-
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        if self.food[x][y]:
+            return True
+        else:
+            return False
 
 
 def mazeDistance(point1, point2, gameState):
