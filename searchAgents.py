@@ -390,15 +390,26 @@ def cornersHeuristic(state, problem):
     walls = problem.walls  # These are the walls of the maze, as a Grid (game.py)
     "*** YOUR CODE HERE ***"
     xy1 = state[0]
-    dis = 0
+    cost = 0
     cornersStates = state[1]  # The four boolean that show the state of each corner's food
-    for i in range(0, 3):
+    notEatenCorners = []
+
+    for i in range(0, len(cornersStates)):
         if not cornersStates[i]:
-            xy2 = corners[i]
-            disGi = util.manhattanDistance(xy1, xy2)
-            if disGi > dis:
-                dis = disGi
-    return dis
+            notEatenCorners.append(corners[i])
+
+    while notEatenCorners:
+        dis = 0
+        closest = -1
+        for xy2 in notEatenCorners:
+            manDis = util.manhattanDistance(xy1, xy2)
+            if dis == 0 or manDis < dis:
+                dis = manDis
+                closest = xy2
+        cost += dis
+        notEatenCorners.remove(closest)
+        xy1 = closest
+    return cost
 
 
 class AStarCornersAgent(SearchAgent):
