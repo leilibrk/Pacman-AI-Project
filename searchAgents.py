@@ -514,25 +514,28 @@ def foodHeuristic(state, problem):
     minCost = 0
     maxCost = 0
     closestIndex = -1
-    furthestIndex = -1
+    xy1 = position
+
+    if len(foods) == 0:
+        return 0
 
     for i in range(0, len(foods)):
         xy2 = foods[i]
-        manDis = util.manhattanDistance(position, xy2)
-        if manDis > maxCost:
-            maxCost = manDis
-            furthestIndex = i
-    for i in range(0, len(foods)):
-        xy2 = foods[i]
-        manDis = util.manhattanDistance(position, xy2)
+        manDis = util.manhattanDistance(xy1, xy2)
         if minCost == 0 or minCost > manDis:
             minCost = manDis
             closestIndex = i
-    if closestIndex == -1 or furthestIndex == -1:
-        return 0
-    else:
-        return util.manhattanDistance(position, foods[closestIndex]) + util.manhattanDistance(foods[closestIndex],
-                                                                                              foods[furthestIndex])
+
+    if closestIndex != -1:
+        xy1 = foods[closestIndex]
+
+    for i in range(0, len(foods)):
+        xy2 = foods[i]
+        manDis = util.manhattanDistance(xy1, xy2)
+        if manDis > maxCost:
+            maxCost = manDis
+
+    return minCost + maxCost
 
 
 class ClosestDotSearchAgent(SearchAgent):
