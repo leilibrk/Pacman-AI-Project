@@ -44,7 +44,7 @@ The project explores various AI algorithms to tackle different aspects of Pac-Ma
   - Expectimax: 46.27 seconds
 
 ## Reinforcement Learning Model Results: 
-![]()
+<img src="https://github.com/leilibrk/Pacman-AI-Project/blob/master/pacman-RL.png" title="" alt="zip2.png" width="300">
 
 ## Acknowledgments
 
