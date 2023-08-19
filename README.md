@@ -8,7 +8,7 @@ This repository showcases the Pac-Man AI Project developed as part of the "Princ
 - **Implementation:** The project is implemented in Python.
 - **Course:** Principles and Applications of Artificial Intelligence.
 - **Grade:** 20/20
-- **Professor:** Dr. Javanmardi Method
+- **Professor:** Dr. Javanmardi
 
 ## Implemented Algorithms
 
