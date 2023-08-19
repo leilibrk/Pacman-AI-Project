@@ -1,6 +1,6 @@
 # Pac-Man AI Project (2021)
 
-This repository showcases the Pac-Man AI Project developed as part of the "Principles and Applications of Artificial Intelligence" course in 2021. The project aims to utilize basic AI methods to develop solutions for the classic Pac-Man game.
+This repository showcases the first phase of Pac-Man AI Project developed as part of the "Principles and Applications of Artificial Intelligence" course in 2021. The project aims to utilize basic AI methods to develop solutions for the classic Pac-Man game. You can find the links to phase two and three below.
 
 ## Project Overview
 
@@ -14,11 +14,18 @@ This repository showcases the Pac-Man AI Project developed as part of the "Princ
 
 The project explores various AI algorithms to tackle different aspects of Pac-Man's gameplay:
 
+### First Phase:
+
 - **Uninformed Search Algorithms:** Implemented DFS, BFS, and UCS algorithms for efficient traversal and consumption of all nodes while keeping Pac-Man alive.
 - **Informed Search Algorithms:** Utilized the A* algorithm for optimized pathfinding and decision-making.
+
+### Second Phase: [GitHub Repository](https://github.com/leilibrk/Pacman-multiAgent)
+
 - **Adversarial Search Algorithms:** Designed strategies for Pac-Man to reach the best utility while avoiding ghosts in a multiagent scenario.
 - **Minimax with Alpha-Beta Pruning:** Implemented the minimax algorithm with alpha-beta pruning for better performance in adversarial scenarios.
 - **Expectimax:** Developed the Expectimax algorithm to handle uncertainty in decision-making.
+
+### Thirs Phase: [GitHub Repository](https://github.com/leilibrk/Pacman-ReinforcementLearning)
 - **Model-Free Reinforcement Learning:** Implemented the Q-learning algorithm, a model-free reinforcement learning approach, to optimize Pac-Man's actions.
 
 ## Performance Metrics
