@@ -25,7 +25,7 @@ The project explores various AI algorithms to tackle different aspects of Pac-Ma
 - **Minimax with Alpha-Beta Pruning:** Implemented the minimax algorithm with alpha-beta pruning for better performance in adversarial scenarios.
 - **Expectimax:** Developed the Expectimax algorithm to handle uncertainty in decision-making.
 
-### Thirs Phase: [GitHub Repository](https://github.com/leilibrk/Pacman-ReinforcementLearning)
+### Third Phase: [GitHub Repository](https://github.com/leilibrk/Pacman-ReinforcementLearning)
 - **Model-Free Reinforcement Learning:** Implemented the Q-learning algorithm, a model-free reinforcement learning approach, to optimize Pac-Man's actions.
 
 ## Performance Metrics
@@ -43,6 +43,8 @@ The project explores various AI algorithms to tackle different aspects of Pac-Ma
   - Minimax with Alpha-Beta Pruning: 33.5 seconds
   - Expectimax: 46.27 seconds
 
+## Reinforcement Learning Model Results: 
+![]()
 
 ## Acknowledgments
 
